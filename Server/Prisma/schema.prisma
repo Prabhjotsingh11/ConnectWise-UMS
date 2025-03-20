@@ -1,0 +1,57 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Resident {
+  ResidentId    String  @id @default(cuid())
+  Email         String  @unique
+  Password      String
+  Name          String
+  FlatNumber    String
+  Address       String
+  ContactNumber String
+  Queries       Query[]
+}
+
+model GigWorkers {
+  WorkerId      String  @id @default(cuid())
+  Category      String
+  Email         String  @unique
+  Password      String
+  AvgRating     Float ?  @default(0.0)
+  Pricing       Int
+  ContactNumber String
+  Gigs          Query[]
+}
+
+model Query {
+  QueryId     String      @id @default(cuid())
+  Category    String
+  Description String
+  Status      Boolean     @default(false)
+  BookedDate  String
+  BookedSlot  String
+  reviewStatus Boolean    @default(false)
+  InTime      DateTime    @default(now())
+  Resident    Resident?   @relation(fields: [ResidentId], references: [ResidentId])
+  ResidentId  String?
+  Gigoperator GigWorkers? @relation(fields: [OperatorId], references: [WorkerId])
+  OperatorId  String?
+}
+
+
+
+model ReviewDetail {
+  Detail_id     String   @id @default(cuid())
+  GigId         String
+  ResidentEmail String
+  WorkerEmail   String
+  Rating        Float
+  Comment       String?
+  CreatedAt     DateTime @default(now())
+}
