@@ -16,7 +16,7 @@ const Gigpreview = () => {
     if (!email) navigate(`/unauthorized`);
     const fetchData = async () => {
       try {
-        const url = `http://localhost:8080/preview/${workerEmail}`;
+        const url = `https://backend-connectwise.prabhjotsingh.tech/preview/${workerEmail}`;
         const response = await fetch(url, {
           method: "GET",
           headers: {

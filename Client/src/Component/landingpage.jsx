@@ -1,4 +1,4 @@
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -9,14 +9,12 @@ export default function LandingPage() {
   const token = useSelector((state) => state.user?.validToken);
   // console.log(token);
   useEffect(() => {
-
     if (!token) {
-      setLoading(false); 
+      setLoading(false);
       return;
     }
 
-    
-    fetch("http://localhost:8080/validate-token", {
+    fetch("https://backend-connectwise.prabhjotsingh.tech/validate-token", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -41,7 +39,7 @@ export default function LandingPage() {
   }, [navigate]);
 
   if (loading) {
-    return <div>Loading...</div>; 
+    return <div>Loading...</div>;
   }
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-white text-center px-6">

@@ -14,7 +14,7 @@ const Tickets = () => {
     const fetchHistoryData = async () => {
       try {
         const response = await fetch(
-          `http://localhost:8080/completed_tickets/${email}`,
+          `https://backend-connectwise.prabhjotsingh.tech/completed_tickets/${email}`,
           {
             method: "GET",
             headers: {

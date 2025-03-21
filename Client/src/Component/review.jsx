@@ -21,7 +21,7 @@ const ReviewForm = () => {
     const data = { rating, comment, gigemail, queryid };
     // console.log(useremail);
     try {
-      const url = `http://localhost:8080/rating/${useremail}`;
+      const url = `https://backend-connectwise.prabhjotsingh.tech/rating/${useremail}`;
       const response = await fetch(url, {
         method: "POST",
         headers: {

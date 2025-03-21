@@ -17,7 +17,7 @@ const GigDashboard = () => {
     if (!email) return;
 
     const fetchDashboard = async () => {
-      const url = `http://localhost:8080/gigdash/${email}`;
+      const url = `https://backend-connectwise.prabhjotsingh.tech/gigdash/${email}`;
       try {
         const response = await fetch(url, {
           method: "GET",
@@ -40,7 +40,7 @@ const GigDashboard = () => {
   const markAsComplete = async (QueryId) => {
     // console.log(QueryId);
     try {
-      const url = `http://localhost:8080/complete-gig/${QueryId}`;
+      const url = `https://backend-connectwise.prabhjotsingh.tech/complete-gig/${QueryId}`;
       const response = await fetch(url, {
         method: "PUT",
         headers: {

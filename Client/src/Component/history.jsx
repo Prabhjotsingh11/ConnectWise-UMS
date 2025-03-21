@@ -10,7 +10,7 @@ const History = () => {
 
   useEffect(() => {
     if (!email) navigate("/unauthorized");
-    const url = `http://localhost:8080/history/${email}`;
+    const url = `https://backend-connectwise.prabhjotsingh.tech/history/${email}`;
 
     const fetchHistoryData = async () => {
       try {

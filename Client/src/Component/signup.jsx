@@ -17,18 +17,21 @@ const SignupComponent = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:8080/signup", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email,
-          password,
-          name,
-          flatnumber,
-          address,
-          contactnumber,
-        }),
-      });
+      const response = await fetch(
+        "https://backend-connectwise.prabhjotsingh.tech/signup",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email,
+            password,
+            name,
+            flatnumber,
+            address,
+            contactnumber,
+          }),
+        }
+      );
 
       const data = await response.json();
       if (response.ok) {

@@ -24,7 +24,7 @@ const Workers = () => {
     const fetchWorkers = async () => {
       try {
         const response = await fetch(
-          `http://localhost:8080/workers/${category}`,
+          `https://backend-connectwise.prabhjotsingh.tech/workers/${category}`,
           {
             method: "GET",
             headers: {

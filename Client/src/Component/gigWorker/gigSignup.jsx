@@ -17,17 +17,20 @@ const GigWorkerSignup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:8080/signup/gig", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          category,
-          email,
-          password,
-          pricing: parseInt(pricing, 10),
-          contactnumber,
-        }),
-      });
+      const response = await fetch(
+        "https://backend-connectwise.prabhjotsingh.tech/signup/gig",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            category,
+            email,
+            password,
+            pricing: parseInt(pricing, 10),
+            contactnumber,
+          }),
+        }
+      );
 
       const data = await response.json();
       if (response.ok) {

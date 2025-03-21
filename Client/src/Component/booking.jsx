@@ -42,7 +42,7 @@ const Booking = () => {
   };
 
   const bookedslots = async () => {
-    const url = `http://localhost:8080/booking/${workerId}/${date}`;
+    const url = `https://backend-connectwise.prabhjotsingh.tech/booking/${workerId}/${date}`;
     try {
       const response = await fetch(url, {
         method: "GET",
@@ -67,7 +67,7 @@ const Booking = () => {
     }
 
     try {
-      const url = `http://localhost:8080/booking/${workerId}/${userEmail}`;
+      const url = `https://backend-connectwise.prabhjotsingh.tech/booking/${workerId}/${userEmail}`;
       const book = await fetch(url, {
         method: "POST",
         headers: {

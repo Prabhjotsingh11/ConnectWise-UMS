@@ -11,7 +11,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     const fetchDashboard = async () => {
-      const url = `http://localhost:8080/dash/${email}`;
+      const url = `https://backend-connectwise.prabhjotsingh.tech/dash/${email}`;
       try {
         const response = await fetch(url, {
           method: "GET",
@@ -43,7 +43,7 @@ const Dashboard = () => {
     // const confirmCancel = window.confirm(
     //   "Are you sure you want to cancel this booking?"
     // );
-    const url = `http://localhost:8080/cancel/${gigId}`;
+    const url = `https://backend-connectwise.prabhjotsingh.tech/cancel/${gigId}`;
     const Cancelgig = await fetch(url, {
       method: "DELETE",
       headers: {
