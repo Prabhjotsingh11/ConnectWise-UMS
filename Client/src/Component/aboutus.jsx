@@ -134,7 +134,7 @@ const AboutUs = () => {
       >
         📧 Contact us:
         <a href="mailto:support@connectwise.com" className="underline ml-1">
-          support@connectwise.com
+          prabhjotbhatti1527@gmail.com
         </a>
       </motion.p>
     </div>
